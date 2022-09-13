@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player2 : MonoBehaviour
 {
 
     public float speed = 10.0f;
@@ -10,11 +10,11 @@ public class Player : MonoBehaviour
     private bool is_ground = false;
     private bool is_walking = false;
     private bool is_attacking = false;
-    /* private GameObject cam; */
+    private GameObject cam;
     private Rigidbody rb;
     private Animator anim;
 
-    /* private Vector3 camera_forward; */
+    private Vector3 camera_forward;
     private Vector3 move_forward;
     private float input_horizontal;
     private float input_vertical;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         anim = gameObject.GetComponent<Animator>();
-        /* cam = GameObject.FindGameObjectWithTag("MainCamera"); */
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     void Update()
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         is_attacking = false;
         input_vertical = 0.0f;
         input_horizontal = 0.0f;
-        /* camera_forward = Vector3.Scale(cam.transform.forward, new Vector3(1, 0, 1)).normalized; */
+        camera_forward = Vector3.Scale(cam.transform.forward, new Vector3(1, 0, 1)).normalized;
 
         if (Input.GetKey("w"))
         {
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
         if (is_walking)
         {
-            move_forward = Vector3.forward * input_vertical + Vector3.right * input_horizontal;
+            move_forward = camera_forward * input_vertical + cam.transform.right * input_horizontal;
             position_diff = move_forward * speed * Time.deltaTime;
             transform.position += position_diff;
             transform.rotation = Quaternion.LookRotation(position_diff);
