@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Bson;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -96,64 +95,64 @@ public class Player3 : MonoBehaviour
 
 }
 
-    //void Update()
-    //{
+//void Update()
+//{
 
-    //    is_walking = false;
-    //    is_attacking = false;
-    //    input_vertical = 0.0f;
-    //    input_horizontal = 0.0f;
-    //    camera_forward = Vector3.Scale(cam.transform.forward, new Vector3(1, 0, 1)).normalized;
+//    is_walking = false;
+//    is_attacking = false;
+//    input_vertical = 0.0f;
+//    input_horizontal = 0.0f;
+//    camera_forward = Vector3.Scale(cam.transform.forward, new Vector3(1, 0, 1)).normalized;
 
-    //    if (Input.GetKey("w"))
-    //    {
-    //        is_walking = true;
-    //        input_vertical = 1.0f;
-    //    }
-    //    if (Input.GetKey("s"))
-    //    {
-    //        is_walking = true;
-    //        input_vertical = -1.0f;
-    //    }
-    //    if (Input.GetKey("d"))
-    //    {
-    //        is_walking = true;
-    //        input_horizontal = 1.0f;
-    //    }
-    //    if (Input.GetKey("a"))
-    //    {
-    //        is_walking = true;
-    //        input_horizontal = -1.0f;
-    //    }
+//    if (Input.GetKey("w"))
+//    {
+//        is_walking = true;
+//        input_vertical = 1.0f;
+//    }
+//    if (Input.GetKey("s"))
+//    {
+//        is_walking = true;
+//        input_vertical = -1.0f;
+//    }
+//    if (Input.GetKey("d"))
+//    {
+//        is_walking = true;
+//        input_horizontal = 1.0f;
+//    }
+//    if (Input.GetKey("a"))
+//    {
+//        is_walking = true;
+//        input_horizontal = -1.0f;
+//    }
 
-    //    if (is_walking)
-    //    {
-    //        move_forward = camera_forward * input_vertical + cam.transform.right * input_horizontal;
-    //        position_diff = move_forward * speed * Time.deltaTime;
-    //        transform.position += position_diff;
-    //        transform.rotation = Quaternion.LookRotation(position_diff);
-    //    }
+//    if (is_walking)
+//    {
+//        move_forward = camera_forward * input_vertical + cam.transform.right * input_horizontal;
+//        position_diff = move_forward * speed * Time.deltaTime;
+//        transform.position += position_diff;
+//        transform.rotation = Quaternion.LookRotation(position_diff);
+//    }
 
-    //    if (Input.GetKey("j"))
-    //    {
-    //        is_attacking = true;
-    //    }
+//    if (Input.GetKey("j"))
+//    {
+//        is_attacking = true;
+//    }
 
-    //    if (is_ground == true)
-    //    {
-    //        if (Input.GetKey("space"))
-    //        {
-    //            is_ground = false;
-    //            is_walking = false;
-    //            rb.AddForce(new Vector3(0, up_force, 0));
-    //        }
-    //    }
-    //    else
-    //    {
-    //        is_walking = false;
-    //    }
+//    if (is_ground == true)
+//    {
+//        if (Input.GetKey("space"))
+//        {
+//            is_ground = false;
+//            is_walking = false;
+//            rb.AddForce(new Vector3(0, up_force, 0));
+//        }
+//    }
+//    else
+//    {
+//        is_walking = false;
+//    }
 
-    //    anim.SetBool("is_walking", is_walking);
-    //    anim.SetBool("is_ground", is_ground);
-    //    anim.SetBool("is_attacking", is_attacking);
-    //}
+//    anim.SetBool("is_walking", is_walking);
+//    anim.SetBool("is_ground", is_ground);
+//    anim.SetBool("is_attacking", is_attacking);
+//}
