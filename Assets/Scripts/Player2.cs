@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player2 : MonoBehaviour
 {
-
     public float speed = 10.0f;
     private float up_force = 300f;
     private bool is_ground = false;
     private bool is_walking = false;
     private bool is_attacking = false;
+
+    private PlayerInput _input;
     private GameObject cam;
     private Rigidbody rb;
     private Animator anim;
@@ -19,6 +19,26 @@ public class Player2 : MonoBehaviour
     private float input_horizontal;
     private float input_vertical;
     private Vector3 position_diff;
+
+    private void Awake()
+    {
+        TryGetComponent(out _input);
+    }
+
+    private void OnEnable()
+    {
+        _input.actions["Fire"].started += OnFire;
+    }
+
+    private void OnDisable()
+    {
+        _input.actions["Fire"].started -= OnFire;
+    }
+
+    private void OnFire(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Fire!");
+    }
 
     void Start()
     {
